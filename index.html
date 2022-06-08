@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <script type="text/javascript"
+        src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=pO1L1apzpsphfzU0iONuKHqgIfYoWqQcE784jbMXu0K-NLAZxGfxvlbStT-Br11dK3iNA16VhEWXfUbGGlCWId9qe2wbSXlwIfUefiXBiQTiJLnv9FsQmx5ygh2vr75vY9gtawa0MI44FX3-B2Iko1JjBpTx1EpZqPdEviVHYjBh59L83RmLivfgOpvt4ReO2l_LNdSzHX_7O9OSNwiD5ZtDJcfaSQmlqe2mlvbcpAvISUmKFN500fP-mh15f5ChUvq5yKCPA1jOznRYXIoV2NNYFoQTsV6yeNNrmQXe3OaBYSSzBZbKmqzbjKc_wgBj01qaCoe76RHNLgDPs0DG9oveRu7kb8julSgw8fix2h0"
+        charset="UTF-8"></script>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: rgb(126, 184, 162);
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            width: 80%;
+            margin: 0 auto;
+        }
+
+        form {
+            width: 60%;
+            margin: 4rem auto;
+            text-align: center;
+        }
+
+        .container>div {
+            width: 20%;
+            -webkit-box-shadow: 10px 14px 29px -6px rgb(50 99 83);
+            -moz-box-shadow: -2px 10px 31px -8px rgba(184, 184, 184, 1);
+
+            background-color: #fff;
+            text-align: center;
+        }
+
+        .container>div h2 {
+            padding: 20px;
+        }
+
+        .inProgress h2 {
+            background: orange;
+        }
+
+        .onHold h2 {
+            background: red;
+        }
+
+        .review h2 {
+            background: yellow
+        }
+
+        .approved h2 {
+            background: green;
+        }
+
+        ul {
+            min-height: 250px;
+            list-style: none;
+        }
+
+        li {
+            padding: 20px;
+            border: 1px solid grey;
+        }
+
+        input[type="text"] {
+            padding: 10px 20px;
+            width: 55%;
+        }
+
+        button,
+        input[type="button"] {
+            padding: 10px 20px;
+            color: #000;
+        }
+    </style>
+</head>
+
+<body>
+    <form id="form">
+        <input type="text" placeholder="enter Project Name" id="projectInput">
+        <input type="button" onclick="addProject()" value="ADD">
+    </form>
+    <section class="container">
+        <div class="inProgress">
+            <h2>In Progress</h2>
+            <ul class="tasksSection" id="inProgressSec" ondrop="drop(event)" ondragover="allowDrop(event)">
+            </ul>
+        </div>
+        <div class="onHold">
+            <h2>On Hold</h2>
+            <ul class="tasksSection" id="onHoldSec" ondrop="drop(event)" ondragover="allowDrop(event)"></ul>
+        </div>
+        <div class="review">
+            <h2>In Review</h2>
+            <ul class="tasksSection" id="reviewSec" ondrop="drop(event)" ondragover="allowDrop(event)"></ul>
+        </div>
+        <div class="approved">
+            <h2>Approved</h2>
+            <ul class="tasksSection" id="approvedSec" ondrop="drop(event)" ondragover="allowDrop(event)"></ul>
+        </div>
+
+    </section>
+    <script src="script.js"></script>
+</body>
+
+</html>
